@@ -2,10 +2,14 @@
 
 base=`dirname $0`
 tmp_dir=/tmp/geotiff_merge/
-tmp_tiff_dir=$tmp_dir/tiffs
+
 target_dir=$2
-dest_dir=$2/`basename $1`
-tmp_merged_file=$tmp_dir/out.tiff
+sub_dir=`basename $1`
+dest_dir=$2/$sub_dir
+tmp_tiff_dir=$tmp_dir/$sub_dir/tiffs/
+tmp_merged_file=$tmp_dir/$sub_dir/out.tiff
+
+mkdir -p `dirname $tmp_merged_file`
 
 mkdir -p $dest_dir
 
